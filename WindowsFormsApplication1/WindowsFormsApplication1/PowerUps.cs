@@ -44,8 +44,8 @@ namespace WindowsFormsApplication1
         private void ChoosePosition()
         {            
             if (rand.Next(1, 5000) % 3 == 1)
-                Y = 50;
-            else Y = height - 150;
+                Y = 150;
+            else Y = height - 200;
             Point = new Point(X, Y);
         }
 
