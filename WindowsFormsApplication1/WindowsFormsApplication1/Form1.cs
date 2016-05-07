@@ -13,6 +13,7 @@ namespace WindowsFormsApplication1
 {
     public partial class Form1 : Form
     {
+
         public int X { get; set; }
         public int Y { get; set; }
         private bool direction;
@@ -27,14 +28,14 @@ namespace WindowsFormsApplication1
             Y = Height;
             direction = true;
             scene = new Scene(Width, Height);
-            pressed = false;
-        }   
+        }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             Dead(e.Graphics);
             scene.DrawBird(e.Graphics);
             scene.DrawPowerUp(e.Graphics);
+            scene.DrawPipe(e.Graphics);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -60,9 +61,9 @@ namespace WindowsFormsApplication1
 
         private void Dead(Graphics g)
         {
-            if(scene.getY() + 100 >= Height)
+            if (scene.getY() + 100 >= Height)
             {
-                timer1.Enabled = timer2.Enabled = timer3.Enabled = false;
+                timer1.Enabled = timer2.Enabled = timer3.Enabled = timer4.Enabled = false;
             }
         }
 
@@ -73,10 +74,18 @@ namespace WindowsFormsApplication1
             Invalidate();
         }
 
+        private void timer4_Tick(object sender, EventArgs e)
+        {
+            scene.MovePipe();
+            Invalidate();
+        }
+
+
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '+' && !pressed)
             {
+                timer4.Start();
                 timer1.Enabled = false;
                 timer2.Enabled = true;
                 time1 = 80;

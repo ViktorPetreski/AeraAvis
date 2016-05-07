@@ -8,37 +8,44 @@ using System.Threading.Tasks;
 namespace WindowsFormsApplication1
 {
 
-    class Pipes
+    class Pipe
     {
-        public Point topPipe;
-        public Point bottomPipe;
-        public int Movement { get; set; }
+        public Point Position { get; set; }
+        private int Type { get; set; }
+        public Image PipeImage;
+        private int Height { get; set; }
+        public readonly int WIDTH = 90;
 
-        public Pipes()
+        public Pipe(Point position, int height, int type)
         {
-            topPipe = new Point();
-            bottomPipe = new Point();
-            Movement = 400;
+            Type = type;
+            if (type == 0)
+                PipeImage = WindowsFormsApplication1.Properties.Resources.top_pillar;
+            else if (type == 1)
+                PipeImage = WindowsFormsApplication1.Properties.Resources.bottom_pillar2;
+
+            Position = position;
+            Height = height;
+
         }
 
-        public void Draw(Graphics g, int x, int y)
-        {             
-            SolidBrush sb = new SolidBrush(Color.DarkCyan);
-            topPipe = new Point(Movement, 0);
-            bottomPipe = new Point(Movement, y);
-            Size size = new Size(50, 200);
-            Rectangle r = new Rectangle(topPipe, size);
-            Rectangle r1 = new Rectangle(bottomPipe, size);
-            Rectangle[] rect = new Rectangle[2];
-            rect[1] = r1;
-            rect[0] = r;
-            g.FillRectangles(sb, rect);
-            Pen pn = new Pen(Color.Black, 1);
-            g.DrawRectangles(pn, rect);
-            pn.Dispose();
-            sb.Dispose();
+        public void Draw(Graphics g)
+        {
+            //  Brush br = new SolidBrush(Color.Red);
+            Rectangle r = new Rectangle(Position.X, Position.Y, WIDTH, Height);
+            //   g.FillRectangle(br, r);
+            g.DrawImage(PipeImage, r);
+            //   br.Dispose();
+        }
+
+        public void Move()
+        {
+            int x = Position.X;
+            int y = Position.Y;
+            Point p = new Point(x - 2, y);
+            Position = p;
         }
     }
+    
 
-   
 }

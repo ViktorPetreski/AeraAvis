@@ -103,6 +103,16 @@ namespace WindowsFormsApplication1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bottom_pillar2 {
+            get {
+                object obj = ResourceManager.GetObject("bottom_pillar2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PowerUp1 {
             get {
                 object obj = ResourceManager.GetObject("PowerUp1", resourceCulture);
@@ -146,6 +156,16 @@ namespace WindowsFormsApplication1.Properties {
         internal static System.Drawing.Bitmap PowerUp5 {
             get {
                 object obj = ResourceManager.GetObject("PowerUp5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap top_pillar {
+            get {
+                object obj = ResourceManager.GetObject("top_pillar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

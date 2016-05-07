@@ -114,6 +114,12 @@
   <ItemGroup>
     <None Include="Resources\ActorNormalRes.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottom-pillar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\top-pillar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
