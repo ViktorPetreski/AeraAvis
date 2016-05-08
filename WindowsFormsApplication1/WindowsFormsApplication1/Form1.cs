@@ -20,6 +20,7 @@ namespace WindowsFormsApplication1
         private int time1;
         private Scene scene;
         private bool pressed;
+        private bool isStarted = false;
 
         public Form1()
         {
@@ -28,12 +29,15 @@ namespace WindowsFormsApplication1
             Y = Height;
             direction = true;
             scene = new Scene(Width, Height);
+          
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            Dead(e.Graphics);
+            //   Dead(e.Graphics);
+            // scene.ShouldDie(e.Graphics);
             scene.DrawBird(e.Graphics);
+         
             scene.DrawPowerUp(e.Graphics);
             scene.DrawPipe(e.Graphics);
         }
@@ -59,12 +63,16 @@ namespace WindowsFormsApplication1
             time1 = 90;
         }
 
-        private void Dead(Graphics g)
+        private void Dead()
         {
-            if (scene.getY() + 100 >= Height)
+          /*  if (scene.getY() + 100 >= Height)
             {
                 timer1.Enabled = timer2.Enabled = timer3.Enabled = timer4.Enabled = false;
             }
+
+          */
+            timer1.Enabled = timer2.Enabled = timer3.Enabled = timer4.Enabled = false;
+
         }
 
         private void timer3_Tick(object sender, EventArgs e)
@@ -72,12 +80,23 @@ namespace WindowsFormsApplication1
             scene.MovePowerUp();
             scene.Intersect();
             Invalidate();
+            if (scene.ShouldDie())
+            {
+                Dead();
+            }
+
         }
 
         private void timer4_Tick(object sender, EventArgs e)
         {
             scene.MovePipe();
             Invalidate();
+            scene.Check();
+            if (scene.ShouldDie())
+            {
+                Dead();
+            }
+
         }
 
 
@@ -85,17 +104,36 @@ namespace WindowsFormsApplication1
         {
             if (e.KeyChar == '+' && !pressed)
             {
-                timer4.Start();
-                timer1.Enabled = false;
+                if (!isStarted)
+                {
+                    timer4.Start();
+                    isStarted = true;
+                }
+           
+       
+                else
+                {
+                    timer1.Enabled = false;
+                    timer2.Enabled = true;
+                    time1 = 80;
+                    pressed = !scene.SuperMan();
+                }
+       
+           /*    timer1.Enabled = false;
                 timer2.Enabled = true;
                 time1 = 80;
-                pressed = !scene.SuperMan();
+                pressed = !scene.SuperMan(); */
             }
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             pressed = false;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

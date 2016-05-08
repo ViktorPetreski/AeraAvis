@@ -17,6 +17,7 @@ namespace WindowsFormsApplication1
         public readonly int MAX_HEIGHT = 815;
         public readonly int MAX_WIDTH = 625;
         public List<Pipe> pipes;
+        Random r;
         public Scene(int width, int height)
         {
             bird = new Bird(width, height);
@@ -34,7 +35,7 @@ namespace WindowsFormsApplication1
             Image tmp = WindowsFormsApplication1.Properties.Resources.ActorNormalRes;
             poweredUpBird.Add(tmp);
             poweredUpBird.Add(tmp);
-
+            r = new Random();
             PipesGeneration();
         }
         public void DrawBird(Graphics g)
@@ -83,6 +84,26 @@ namespace WindowsFormsApplication1
             }
         }
 
+        public bool ShouldDie()
+        {
+            foreach (Pipe p in pipes)
+            {
+                
+                Point point = new Point(bird.GetPoint().X + 3, bird.GetPoint().Y + 7);
+                Size size = new Size(bird.GetSize().Width - 7, bird.GetSize().Height - 14);
+                //     Brush br = new SolidBrush(Color.Green);
+
+                Rectangle c = new Rectangle(point, size);
+                   //  g.FillRectangle(br, c);
+                if (c.IntersectsWith(p.r))
+                {
+                    return true;
+
+                }
+
+            }
+            return false;
+        }
         public bool Reverse()
         {
             return powerUp.CheckReversed();
@@ -104,31 +125,41 @@ namespace WindowsFormsApplication1
             {
                 p.Move();
             }
-            if (pipes.Last().Position.X < 250)
+            if (pipes.Last().Position.X < 400)
             {
 
-                PipesGeneration();
-                pipes.RemoveAt(0);
-                pipes.RemoveAt(1);
-                pipes.RemoveAt(2);
+                PipesGeneration(2);
+
             }
+
             //  Invalidate();
         }
 
         public void PipesGeneration(int t = 0)
         {
-            Random r = new Random();
-
             for (int i = 0; i < 5; i++)
             {
-                h = r.Next(200, 450);
-                //  vel = r.Next(100, 200);
-                //   height = h + vel;
-                int x = 400 + i * 150;
-                Pipe p1 = new Pipe(new Point(x, 0), h, 0);
-                Pipe p2 = new Pipe(new Point(x, h + 100), MAX_HEIGHT - (h + 100) - 100, 1);
+                h = r.Next(200, 350);
+                int x;
+                if (t == 2)
+                {
+                    x = 550 + i * 150;
+                }
+                else
+                {
+                    x = 400 + i * 150;
+                }
+
+
+                Pipe p0 = new Pipe(new Point(x + 19, 30), h, 0);
+                Pipe p1 = new Pipe(new Point(x, 0), 30, 1);
+                Pipe p2 = new Pipe(new Point(x + 19, h + 150), 600 - (h + 150), 2);
+                Pipe p3 = new Pipe(new Point(x, 600), 30, 3);
                 pipes.Add(p1);
                 pipes.Add(p2);
+                pipes.Add(p0);
+                pipes.Add(p3);
+
             }
 
         }
@@ -137,6 +168,17 @@ namespace WindowsFormsApplication1
         {
             foreach (Pipe p in pipes)
                 p.Draw(g);
+        }
+
+        public void Check()
+        {
+            for (int i = pipes.Count - 1; i >= 0; i--)
+            {
+                if (pipes[i].Position.X < -90)
+                {
+                    pipes.RemoveAt(i);
+                }
+            }
         }
     }
 }

@@ -40,6 +40,11 @@ namespace WindowsFormsApplication1
             size = newSIze;
         }
 
+        public Point GetPoint()
+        {
+            return point;
+        }
+
         public Size GetSize()
         {
             return size;

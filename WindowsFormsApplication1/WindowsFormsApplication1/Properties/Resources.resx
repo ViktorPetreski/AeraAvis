@@ -145,10 +145,16 @@
   <data name="PowerUp5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PowerUp5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bottom_pillar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bottom-pillar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bottom_pillar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bottom-pillar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="top_pillar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\top-pillar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="top_pillar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\top-pillar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="top_pillar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\top-pillar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
