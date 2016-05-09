@@ -56,7 +56,7 @@ namespace WindowsFormsApplication1
         {
             int x = Position.X;
             int y = Position.Y;
-            Point p = new Point(x - 2, y);
+            Point p = new Point(x - 3, y);
             Position = p;
 
         }

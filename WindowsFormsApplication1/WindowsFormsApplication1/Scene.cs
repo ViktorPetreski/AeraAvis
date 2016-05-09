@@ -12,7 +12,7 @@ namespace WindowsFormsApplication1
         private List<Image> poweredUpBird;
         private PowerUps powerUp;
         public int height = 300;
-        public int vel = 200;
+      
         public int h;
         public readonly int MAX_HEIGHT = 815;
         public readonly int MAX_WIDTH = 625;
@@ -35,6 +35,7 @@ namespace WindowsFormsApplication1
             Image tmp = WindowsFormsApplication1.Properties.Resources.ActorNormalRes;
             poweredUpBird.Add(tmp);
             poweredUpBird.Add(tmp);
+      //      poweredUpBird.Add(WindowsFormsApplication1.Properties.Resources.PowerUp1);
             r = new Random();
             PipesGeneration();
         }
@@ -82,6 +83,11 @@ namespace WindowsFormsApplication1
                 powerUp.getPower();
                 bird.PowerUp(PickPowerUp(powerUp.getIndex()));
             }
+
+            if (Grujo())
+            {
+                PipesGeneration(3);
+            }
         }
 
         public bool ShouldDie()
@@ -91,10 +97,10 @@ namespace WindowsFormsApplication1
                 
                 Point point = new Point(bird.GetPoint().X + 3, bird.GetPoint().Y + 7);
                 Size size = new Size(bird.GetSize().Width - 7, bird.GetSize().Height - 14);
-            //         Brush br = new SolidBrush(Color.Green);
+            //        Brush br = new SolidBrush(Color.Green);
 
                 Rectangle c = new Rectangle(point, size);
-            //         g.FillRectangle(br, c);
+           //          g.FillRectangle(br, c);
                 if (c.IntersectsWith(p.r))
                 {
                     return true;
@@ -108,7 +114,10 @@ namespace WindowsFormsApplication1
         {
             return powerUp.CheckReversed();
         }
-
+        public bool Grujo()
+        {
+            return bird.intersect && powerUp.getIndex() == 0;
+        }
         public bool SuperMan()
         {
             return bird.intersect && powerUp.getIndex() == 1;
@@ -137,15 +146,31 @@ namespace WindowsFormsApplication1
 
         public void PipesGeneration(int t = 0)
         {
+            int vel = 150;
+           if(t == 3)
+            {
+                pipes.Clear();
+                vel = 400;
+            }
             for (int i = 0; i < 5; i++)
             {
-                h = r.Next(200, 350);
+                if(t == 3)
+                {
+                    h = r.Next(40, 70);
+            
+                }
+                else
+                {
+                    h = r.Next(150, 350);
+                  
+                }
+              
                 int x;
                 if (t == 2)
                 {
                     x = 550 + i * 150;
-                }
-                else
+                }              
+                else 
                 {
                     x = 400 + i * 150;
                 }
@@ -153,7 +178,7 @@ namespace WindowsFormsApplication1
 
                 Pipe p0 = new Pipe(new Point(x + 19, 30), h, 0);
                 Pipe p1 = new Pipe(new Point(x, 0), 30, 1);
-                Pipe p2 = new Pipe(new Point(x + 19, h + 150), 600 - (h + 150), 2);
+                Pipe p2 = new Pipe(new Point(x + 19, h + vel), 600 - (h + vel), 2);
                 Pipe p3 = new Pipe(new Point(x, 600), 30, 3);
                 pipes.Add(p1);
                 pipes.Add(p2);
