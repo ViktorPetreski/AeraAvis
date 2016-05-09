@@ -53,20 +53,19 @@
             // 
             // timer4
             // 
-            this.timer4.Interval = 20;
+            this.timer4.Interval = 25;
             this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(607, 768);
+            this.ClientSize = new System.Drawing.Size(455, 624);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(625, 815);
+            this.MaximumSize = new System.Drawing.Size(473, 669);
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);

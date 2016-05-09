@@ -32,7 +32,7 @@ namespace WindowsFormsApplication1
             X = width;
             this.height = height;
             Init();
-            currIndeks = rand.Next(1, powerUps.Count);
+            currIndeks = rand.Next(0, powerUps.Count);
             position = new Rectangle(Point, Size);
         }
 
@@ -74,7 +74,7 @@ namespace WindowsFormsApplication1
 
         private void DrawPowerUp(Object source, ElapsedEventArgs e)
         {
-            currIndeks = rand.Next(1, powerUps.Count);
+            currIndeks = rand.Next(0, powerUps.Count);
             ChoosePosition();
             position = new Rectangle(Point, Size);
             timerEnabled = true;
@@ -85,7 +85,7 @@ namespace WindowsFormsApplication1
             X -= 2;
             Point = new Point(X, Y);
             position = new Rectangle(Point, Size);
-            if(X < -10)
+            if(X < -40)
             {
                 X = width;
                 timerEnabled = false;

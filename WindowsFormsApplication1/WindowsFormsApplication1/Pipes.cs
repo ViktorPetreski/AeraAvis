@@ -24,7 +24,6 @@ namespace WindowsFormsApplication1
                 WIDTH = 50;
                 PipeImage = WindowsFormsApplication1.Properties.Resources.top_pillar1;
             }
-
             else if (type == 1)
                 PipeImage = WindowsFormsApplication1.Properties.Resources.top_pillar2;
             else if (type == 2)
@@ -32,7 +31,6 @@ namespace WindowsFormsApplication1
                 PipeImage = WindowsFormsApplication1.Properties.Resources.bottom_pillar1;
                 WIDTH = 50;
             }
-
             else if (type == 3)
                 PipeImage = WindowsFormsApplication1.Properties.Resources.bottom_pillar2;
 
@@ -56,7 +54,7 @@ namespace WindowsFormsApplication1
         {
             int x = Position.X;
             int y = Position.Y;
-            Point p = new Point(x - 2, y);
+            Point p = new Point(x - 3, y);
             Position = p;
 
         }

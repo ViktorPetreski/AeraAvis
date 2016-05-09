@@ -47,7 +47,7 @@ namespace WindowsFormsApplication1
             timer1.Interval = time1;
             direction = false;
             if (time1 >= 30)
-                time1 -= 10;
+                time1 -= 5;
             timer2.Enabled = false;
             scene.MoveBird(direction);
             Invalidate();
@@ -55,12 +55,12 @@ namespace WindowsFormsApplication1
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            timer3.Enabled = PowerUps.timerEnabled;
             direction = true;
             scene.MoveBird(direction);
             Invalidate();
             timer1.Enabled = true;
-            time1 = 90;
+            time1 = 65;
+            timer3.Enabled = PowerUps.timerEnabled;
         }
 
         private void Dead()
@@ -118,7 +118,7 @@ namespace WindowsFormsApplication1
                 {
                     timer1.Enabled = false;
                     timer2.Enabled = true;
-                    time1 = 80;
+                    time1 = 65;
                     pressed = !scene.SuperMan();
                 }
             

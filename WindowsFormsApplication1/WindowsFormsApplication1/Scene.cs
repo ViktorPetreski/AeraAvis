@@ -150,9 +150,8 @@ namespace WindowsFormsApplication1
                     x = 400 + i * 150;
                 }
 
-
-                Pipe p0 = new Pipe(new Point(x + 19, 30), h, 0);
-                Pipe p1 = new Pipe(new Point(x, 0), 30, 1);
+                Pipe p0 = new Pipe(new Point(x + 19, 40), h, 0);
+                Pipe p1 = new Pipe(new Point(x, 0), 40, 1);
                 Pipe p2 = new Pipe(new Point(x + 19, h + 150), 600 - (h + 150), 2);
                 Pipe p3 = new Pipe(new Point(x, 600), 30, 3);
                 pipes.Add(p1);
