@@ -91,10 +91,10 @@ namespace WindowsFormsApplication1
                 
                 Point point = new Point(bird.GetPoint().X + 3, bird.GetPoint().Y + 7);
                 Size size = new Size(bird.GetSize().Width - 7, bird.GetSize().Height - 14);
-                //     Brush br = new SolidBrush(Color.Green);
+            //         Brush br = new SolidBrush(Color.Green);
 
                 Rectangle c = new Rectangle(point, size);
-                   //  g.FillRectangle(br, c);
+            //         g.FillRectangle(br, c);
                 if (c.IntersectsWith(p.r))
                 {
                     return true;

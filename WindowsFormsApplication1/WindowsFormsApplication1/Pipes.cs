@@ -47,7 +47,7 @@ namespace WindowsFormsApplication1
             r = new Rectangle(Position.X, Position.Y, WIDTH, Height);
             //    Bitmap bmp = new Bitmap(PipeImage);
 
-          //  g.FillRectangle(br, r);
+        //    g.FillRectangle(br, r);
             g.DrawImage(PipeImage, r);
             //     br.Dispose();
         }

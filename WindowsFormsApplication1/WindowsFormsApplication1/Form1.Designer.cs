@@ -53,7 +53,7 @@
             // 
             // timer4
             // 
-            this.timer4.Interval = 30;
+            this.timer4.Interval = 20;
             this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
             // 
             // Form1
@@ -65,10 +65,9 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(625, 815);
             this.Name = "Form1";
-            this.Text = "Flappy";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);

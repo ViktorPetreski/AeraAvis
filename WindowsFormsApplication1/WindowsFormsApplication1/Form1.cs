@@ -35,7 +35,7 @@ namespace WindowsFormsApplication1
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             //   Dead(e.Graphics);
-            // scene.ShouldDie(e.Graphics);
+          //   scene.ShouldDie(e.Graphics);
             scene.DrawBird(e.Graphics);
          
             scene.DrawPowerUp(e.Graphics);
@@ -71,7 +71,7 @@ namespace WindowsFormsApplication1
             }
 
           */
-            timer1.Enabled = timer2.Enabled = timer3.Enabled = timer4.Enabled = false;
+            timer2.Enabled = timer3.Enabled = timer4.Enabled = false;
 
         }
 
@@ -84,7 +84,7 @@ namespace WindowsFormsApplication1
             {
                 Dead();
             }
-
+            
         }
 
         private void timer4_Tick(object sender, EventArgs e)
@@ -96,7 +96,7 @@ namespace WindowsFormsApplication1
             {
                 Dead();
             }
-
+            
         }
 
 
@@ -109,8 +109,11 @@ namespace WindowsFormsApplication1
                     timer4.Start();
                     isStarted = true;
                 }
-           
-       
+
+                if (scene.ShouldDie())
+                {
+                    Dead();
+                }
                 else
                 {
                     timer1.Enabled = false;
@@ -118,12 +121,15 @@ namespace WindowsFormsApplication1
                     time1 = 80;
                     pressed = !scene.SuperMan();
                 }
-       
-           /*    timer1.Enabled = false;
+            
+       /*
+              timer1.Enabled = false;
                 timer2.Enabled = true;
                 time1 = 80;
-                pressed = !scene.SuperMan(); */
+                pressed = !scene.SuperMan();
+                */
             }
+            
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
