@@ -35,7 +35,7 @@ namespace WindowsFormsApplication1
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             //   Dead(e.Graphics);
-          //   scene.ShouldDie(e.Graphics);
+       //      scene.ShouldDie(e.Graphics);
             scene.DrawBird(e.Graphics);
          
             scene.DrawPowerUp(e.Graphics);
@@ -80,10 +80,10 @@ namespace WindowsFormsApplication1
             scene.MovePowerUp();
             scene.Intersect();
             Invalidate();
-            if (scene.ShouldDie())
-            {
-                Dead();
-            }
+           if (scene.ShouldDie())
+           {
+               Dead();
+           }
             
         }
 
@@ -94,7 +94,7 @@ namespace WindowsFormsApplication1
             scene.Check();
             if (scene.ShouldDie())
             {
-                Dead();
+               Dead();
             }
             
         }
@@ -122,11 +122,12 @@ namespace WindowsFormsApplication1
                     pressed = !scene.SuperMan();
                 }
             
-       /*
-              timer1.Enabled = false;
+       
+           /*   timer1.Enabled = false;
                 timer2.Enabled = true;
                 time1 = 80;
                 pressed = !scene.SuperMan();
+                
                 */
             }
             

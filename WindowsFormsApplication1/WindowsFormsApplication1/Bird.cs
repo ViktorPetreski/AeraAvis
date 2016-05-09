@@ -130,7 +130,7 @@ namespace WindowsFormsApplication1
             currentImage = img;
             birdImage = currentImage;
             intersect = true;
-            await Task.Delay(TimeSpan.FromSeconds(5));
+            await Task.Delay(TimeSpan.FromSeconds(7));
             intersect = false;
             SetSize(new Size(50,50));
             currentImage = WindowsFormsApplication1.Properties.Resources.ActorNormalRes;
