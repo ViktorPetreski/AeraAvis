@@ -54,8 +54,9 @@ namespace WindowsFormsApplication1
             powerUps.Add(WindowsFormsApplication1.Properties.Resources.PowerUp1);
             powerUps.Add(WindowsFormsApplication1.Properties.Resources.PowerUp2);
             powerUps.Add(WindowsFormsApplication1.Properties.Resources.PowerUp3);
-            powerUps.Add(WindowsFormsApplication1.Properties.Resources.PowerUp4);
+            powerUps.Add(WindowsFormsApplication1.Properties.Resources.PowerUp4);        
             powerUps.Add(WindowsFormsApplication1.Properties.Resources.PowerUp5);
+         //   powerUps.Add(WindowsFormsApplication1.Properties.Resources.PowerUp1);
             SetTimer();
             ChoosePosition();
         }
