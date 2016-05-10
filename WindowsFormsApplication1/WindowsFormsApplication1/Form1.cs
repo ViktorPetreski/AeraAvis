@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -21,6 +22,8 @@ namespace WindowsFormsApplication1
         private Scene scene;
         private bool pressed;
         private bool isStarted = false;
+        private bool stop;
+        private SoundPlayer fly;
 
         public Form1()
         {
@@ -29,17 +32,23 @@ namespace WindowsFormsApplication1
             Y = Height;
             direction = true;
             scene = new Scene(Width, Height);
-          
+            stop = false;
+            fly = new SoundPlayer(WindowsFormsApplication1.Properties.Resources.Up);
+            
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             //   Dead(e.Graphics);
-       //      scene.ShouldDie(e.Graphics);
-            scene.DrawBird(e.Graphics);
-         
-            scene.DrawPowerUp(e.Graphics);
+            //      scene.ShouldDie(e.Graphics);
+            if (scene.ShouldDie())
+            {
+                stop = true;
+                Dead();
+            }         
             scene.DrawPipe(e.Graphics);
+            scene.DrawPowerUp(e.Graphics);
+            scene.DrawBird(e.Graphics);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -65,13 +74,13 @@ namespace WindowsFormsApplication1
 
         private void Dead()
         {
-          /*  if (scene.getY() + 100 >= Height)
-            {
-                timer1.Enabled = timer2.Enabled = timer3.Enabled = timer4.Enabled = false;
-            }
-
-          */
             timer2.Enabled = timer3.Enabled = timer4.Enabled = false;
+
+            if (scene.stopTimer)
+            {
+                timer1.Enabled = false;
+                MessageBox.Show("Umre");
+            }
 
         }
 
@@ -79,56 +88,38 @@ namespace WindowsFormsApplication1
         {
             scene.MovePowerUp();
             scene.Intersect();
-            Invalidate();
-           if (scene.ShouldDie())
-           {
-               Dead();
-           }
-            
+            Invalidate();            
         }
 
         private void timer4_Tick(object sender, EventArgs e)
         {
             scene.MovePipe();
-            Invalidate();
             scene.Check();
-            if (scene.ShouldDie())
+            if (scene.Neso())
             {
-               Dead();
+                int x = Int32.Parse(label1.Text) + 1;
+                label1.Text = x.ToString();
             }
-            
+            Invalidate();            
         }
 
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (stop) return;
             if (e.KeyChar == '+' && !pressed)
             {
+                fly.Play();
                 if (!isStarted)
-                {
+                { 
                     timer4.Start();
                     isStarted = true;
                 }
-
-                if (scene.ShouldDie())
-                {
-                    Dead();
-                }
-                else
-                {
-                    timer1.Enabled = false;
-                    timer2.Enabled = true;
-                    time1 = 65;
-                    pressed = !scene.SuperMan();
-                }
-            
-       
-           /*   timer1.Enabled = false;
+                       
+                timer1.Enabled = false;
                 timer2.Enabled = true;
-                time1 = 80;
+                time1 = 65;
                 pressed = !scene.SuperMan();
-                
-                */
             }
             
         }
@@ -142,5 +133,6 @@ namespace WindowsFormsApplication1
         {
 
         }
+
     }
 }

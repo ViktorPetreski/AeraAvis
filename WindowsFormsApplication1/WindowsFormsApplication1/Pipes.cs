@@ -58,6 +58,8 @@ namespace WindowsFormsApplication1
             Position = p;
 
         }
+
+       
     }
 
 
