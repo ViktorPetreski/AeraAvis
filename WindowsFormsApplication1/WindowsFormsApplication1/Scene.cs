@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Media;
+using System.Reflection;
+using System.Text;
 using System.Threading;
 using System.Timers;
+using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
@@ -13,8 +17,7 @@ namespace WindowsFormsApplication1
         private Bird bird;
         private List<Image> poweredUpBird;
         private PowerUps powerUp;
-        public int height = 300;
-      
+        public int height = 300;      
         public int h;
         public readonly int MAX_HEIGHT = 607;
         public readonly int MAX_WIDTH = 470;
@@ -22,8 +25,9 @@ namespace WindowsFormsApplication1
         Random r;
         public bool stopTimer;
         private SoundPlayer grujo;
-
-
+        private int score;
+        private List<string> scores;
+        private bool dead = false;
 
         public Scene(int width, int height)
         {
@@ -32,22 +36,23 @@ namespace WindowsFormsApplication1
             poweredUpBird = new List<Image>();
             pipes = new List<Pipe>();
             stopTimer = false;
-            grujo = new SoundPlayer(WindowsFormsApplication1.Properties.Resources.Grujo);
+            grujo = new SoundPlayer(Properties.Resources.Grujo);
+            score = 0;
             Init();
         }
 
         private void Init()
         {
-            poweredUpBird.Add(WindowsFormsApplication1.Properties.Resources.PowerUp1);
-            poweredUpBird.Add(WindowsFormsApplication1.Properties.Resources.ActorSuper);
-            poweredUpBird.Add(WindowsFormsApplication1.Properties.Resources.PowerUp3);
+            poweredUpBird.Add(Properties.Resources.PowerUp1);
+            poweredUpBird.Add(Properties.Resources.ActorSuper);
+            poweredUpBird.Add(Properties.Resources.PowerUp3);
             Image tmp = WindowsFormsApplication1.Properties.Resources.ActorNormalRes;
             poweredUpBird.Add(tmp);
             poweredUpBird.Add(tmp);
-      //      poweredUpBird.Add(WindowsFormsApplication1.Properties.Resources.PowerUp1);
             r = new Random();
             PipesGeneration();
         }
+
         public void DrawBird(Graphics g)
         {
             bird.Fly(g);
@@ -100,39 +105,50 @@ namespace WindowsFormsApplication1
             }
         }
 
-
-
+        private void ReadAndWriteScore()
+        {
+            scores = File.ReadAllLines("Scores.txt").ToList();
+            scores.Add(score.ToString());
+            scores = scores.OrderByDescending(x => x).ToList();
+            scores.RemoveAt(3);
+            File.WriteAllLines("Scores.txt", scores);
+        }
+        
         public bool ShouldDie()
         {
+            bool flag = false;
             foreach (Pipe p in pipes)
             {
-                
                 Point point = new Point(bird.GetPoint().X + 3, bird.GetPoint().Y + 7);
                 Size size = new Size(bird.GetSize().Width - 7, bird.GetSize().Height - 14);
-            //        Brush br = new SolidBrush(Color.Green);
-
+                //Brush br = new SolidBrush(Color.Green);
                 Rectangle c = new Rectangle(point, size);
-                //          g.FillRectangle(br, c);
-
-                if (bird.GetPoint().Y + bird.GetSize().Height >= 600)
-                    stopTimer = true;
-
-                if (c.IntersectsWith(p.r) || bird.GetPoint().Y + 7 <= 0 || bird.GetPoint().Y + bird.GetSize().Height - 14 >= 603)
+                //g.FillRectangle(br, c);
+                if (c.IntersectsWith(p.r) || bird.GetPoint().Y <= 0 || bird.GetPoint().Y + bird.GetSize().Height >= MAX_HEIGHT)
                 {
-                    return true;
+                    dead = true;
+                    ReadAndWriteScore();
+                    flag = true;
+                    break;
                 }
 
             }
-            return false;
+
+            if (bird.GetPoint().Y + bird.GetSize().Height >= MAX_HEIGHT)
+                stopTimer = true;
+            return flag;
         }
+
         public bool Reverse()
         {
             return powerUp.CheckReversed();
         }
+
         public bool Grujo()
         {
             return bird.intersect && powerUp.getIndex() == 0;
         }
+
         public bool SuperMan()
         {
             return bird.intersect && powerUp.getIndex() == 1;
@@ -151,17 +167,14 @@ namespace WindowsFormsApplication1
             }
             if (pipes.Last().Position.X < 400)
             {
-
                 PipesGeneration(2);
-
             }
 
         }
 
-
         public void PipesGeneration(int t = 0)
         {
-           int vel = 150;
+           int vel = 190;
            if(t == 3)
             {
                 pipes.Clear();
@@ -169,17 +182,13 @@ namespace WindowsFormsApplication1
             }
             for (int i = 0; i < 5; i++)
             {
-
-              
                 if(t == 3)
                 {
                     h = r.Next(40, 70);
-            
                 }
                 else
                 {
                     h = r.Next(150, 350);
-                  
                 }
               
                 int x;
@@ -221,18 +230,19 @@ namespace WindowsFormsApplication1
             }
         }
 
-        public bool Neso()
+        public string PipePassed(string count)
         {
+            score = Int32.Parse(count);
             foreach (Pipe p in pipes)
             {
                 int x1 = p.Position.X + 25;
                 int x2 = bird.GetPoint().X;
                 if (x1 == x2)
                 {
-                    return true;
+                    score += 1;
                 }
             }
-                return false;
+            return score.ToString();
         }
     }
 }

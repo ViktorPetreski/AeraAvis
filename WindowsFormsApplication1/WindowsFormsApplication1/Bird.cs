@@ -21,10 +21,11 @@ namespace WindowsFormsApplication1
         public int diff;
         private int angle;
         public bool intersect;
+        Timer timer;
 
         public Bird(int x, int y)
         {
-            birdImage = WindowsFormsApplication1.Properties.Resources.ActorNormalRes;
+            birdImage = Properties.Resources.ActorNormalRes;
             size = new Size(50, 50);
             birdX = x / 2 - 50 / 2;
             birdY = y / 2 - 50 / 2;
@@ -33,6 +34,19 @@ namespace WindowsFormsApplication1
             angle = 0;
             currentImage = birdImage;
             intersect = false;
+            timer = new Timer(7500);
+            timer.Elapsed += Start;
+
+        }
+
+        private void Start(object sender, ElapsedEventArgs e)
+        {
+            intersect = false;
+            size = new Size(50, 50);
+            currentImage = Properties.Resources.ActorNormalRes;
+            birdImage = currentImage;
+            timer.Stop();
+           // throw new NotImplementedException();
         }
 
         public void SetSize(Size newSIze)
@@ -53,8 +67,8 @@ namespace WindowsFormsApplication1
         public Image RotateImage(Image img, float rotationAngle)
         {
             //create an empty Bitmap image
-            Bitmap bmp = new Bitmap(50, 50);
-            Rectangle rec = new Rectangle(0, 0, 50, 50);
+            Bitmap bmp = new Bitmap(img.Width, img.Height);
+            Rectangle rec = new Rectangle(0, 0, img.Width, img.Height);
 
             //turn the Bitmap into a Graphics object
             Graphics gfx = Graphics.FromImage(bmp);
@@ -114,7 +128,6 @@ namespace WindowsFormsApplication1
             position = new Rectangle(point, size);
         }
 
-
         public void Fly(Graphics g)
         {
             g.DrawImage(birdImage, position);
@@ -125,16 +138,13 @@ namespace WindowsFormsApplication1
             return position;
         }
 
-        public async void PowerUp(Image img)
+        public void PowerUp(Image img)
         {
+            timer.Start();
             currentImage = img;
             birdImage = currentImage;
             intersect = true;
-            await Task.Delay(TimeSpan.FromSeconds(7));
-            intersect = false;
-            SetSize(new Size(50,50));
-            currentImage = WindowsFormsApplication1.Properties.Resources.ActorNormalRes;
-            birdImage = currentImage;
+           // await Task.Delay(TimeSpan.FromSeconds(7));
         }
         
                 

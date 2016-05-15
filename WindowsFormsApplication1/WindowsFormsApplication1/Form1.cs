@@ -25,6 +25,7 @@ namespace WindowsFormsApplication1
         private bool stop;
         private SoundPlayer fly;
         StartupForm sf;
+
         public Form1()
         {
             InitializeComponent();
@@ -41,12 +42,10 @@ namespace WindowsFormsApplication1
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            //   Dead(e.Graphics);
-            //      scene.ShouldDie(e.Graphics);
             if (scene.ShouldDie())
             {
-                stop = true;
                 Dead();
+                stop = true;
             }         
             scene.DrawPipe(e.Graphics);
             scene.DrawPowerUp(e.Graphics);
@@ -76,14 +75,13 @@ namespace WindowsFormsApplication1
 
         private void Dead()
         {
-            timer2.Enabled = timer3.Enabled = timer4.Enabled = false;
-
-            if (scene.stopTimer)
+            timer1.Enabled = timer2.Enabled = timer3.Enabled = timer4.Enabled = false;
+            /*if (scene.stopTimer)
             {
                 timer1.Enabled = false;
+                scene.stopTimer = false;
+            }*/
                 MessageBox.Show("Umre");
-            }
-
         }
 
         private void timer3_Tick(object sender, EventArgs e)
@@ -97,11 +95,7 @@ namespace WindowsFormsApplication1
         {
             scene.MovePipe();
             scene.Check();
-            if (scene.Neso())
-            {
-                int x = Int32.Parse(label1.Text) + 1;
-                label1.Text = x.ToString();
-            }
+            label1.Text = scene.PipePassed(label1.Text);
             Invalidate();            
         }
 
@@ -118,8 +112,7 @@ namespace WindowsFormsApplication1
                 { 
                     timer4.Start();
                     isStarted = true;
-                }
-                       
+                }                       
                 timer1.Enabled = false;
                 timer2.Enabled = true;
                 time1 = 65;

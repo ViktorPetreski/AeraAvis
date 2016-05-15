@@ -1,0 +1,7 @@
+C:\Users\Viktor\Source\Repos\VPProekt\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplicaton1.csprojResolveAssemblyReference.cache
+C:\Users\Viktor\Source\Repos\VPProekt\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Viktor\Source\Repos\VPProekt\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Viktor\Source\Repos\VPProekt\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.StartupForm.resources
+C:\Users\Viktor\Source\Repos\VPProekt\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplicaton1.csproj.GenerateResource.Cache
+C:\Users\Viktor\Source\Repos\VPProekt\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Viktor\Source\Repos\VPProekt\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb

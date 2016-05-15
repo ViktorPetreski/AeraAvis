@@ -200,6 +200,17 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 0
+        ///0
+        ///0.
+        /// </summary>
+        internal static string Scores {
+            get {
+                return ResourceManager.GetString("Scores", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap start_button3 {

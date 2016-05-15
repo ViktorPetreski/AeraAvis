@@ -41,3 +41,4 @@ C:\Users\Viktor\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\De
 C:\Users\Viktor\Documents\vp\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
 C:\Users\Viktor\Documents\vp\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\Viktor\Documents\vp\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Viktor\Source\Repos\VPProekt\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.StartupForm.resources

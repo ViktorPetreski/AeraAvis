@@ -42,20 +42,18 @@ namespace WindowsFormsApplication1
         }
 
         private void ChoosePosition()
-        {            
-         //   if (rand.Next(1, 5000) % 3 == 1)
-                Y = rand.Next(250,450);
-        //    else Y = height - 200;
+        {
+            Y = rand.Next(200,500);
             Point = new Point(X, Y);
         }
 
         private void Init()
         {
-            powerUps.Add(WindowsFormsApplication1.Properties.Resources.PowerUp1);
-            powerUps.Add(WindowsFormsApplication1.Properties.Resources.PowerUp2);
-            powerUps.Add(WindowsFormsApplication1.Properties.Resources.PowerUp3);
-            powerUps.Add(WindowsFormsApplication1.Properties.Resources.PowerUp4);
-            powerUps.Add(WindowsFormsApplication1.Properties.Resources.PowerUp5);
+            powerUps.Add(Properties.Resources.PowerUp1);
+            powerUps.Add(Properties.Resources.PowerUp2);
+            powerUps.Add(Properties.Resources.PowerUp3);
+            powerUps.Add(Properties.Resources.PowerUp4);
+            powerUps.Add(Properties.Resources.PowerUp5);
             SetTimer();
             ChoosePosition();
         }

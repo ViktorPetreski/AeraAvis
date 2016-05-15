@@ -22,17 +22,17 @@ namespace WindowsFormsApplication1
             if (type == 0)
             {
                 WIDTH = 50;
-                PipeImage = WindowsFormsApplication1.Properties.Resources.top_pillar1;
+                PipeImage = Properties.Resources.top_pillar1;
             }
             else if (type == 1)
-                PipeImage = WindowsFormsApplication1.Properties.Resources.top_pillar2;
+                PipeImage = Properties.Resources.top_pillar2;
             else if (type == 2)
             {
-                PipeImage = WindowsFormsApplication1.Properties.Resources.bottom_pillar1;
+                PipeImage = Properties.Resources.bottom_pillar1;
                 WIDTH = 50;
             }
             else if (type == 3)
-                PipeImage = WindowsFormsApplication1.Properties.Resources.bottom_pillar2;
+                PipeImage = Properties.Resources.bottom_pillar2;
 
             Position = position;
             Height = height;
