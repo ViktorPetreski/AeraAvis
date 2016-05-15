@@ -118,49 +118,58 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ActorNormalResized" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ActorNormalResized.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ActorSuper" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ActorSuper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PowerUp1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PowerUp1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PowerUp2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PowerUp2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PowerUp3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PowerUp3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ActorNormalRes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ActorNormalRes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PowerUp4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PowerUp4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PowerUp5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PowerUp5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="start_button3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\start_button3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bottom_pillar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bottom-pillar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bottom_pillar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bottom-pillar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PowerUp4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PowerUp4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ActorNormalRes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ActorNormalRes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="top_pillar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\top-pillar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="top_pillar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\top-pillar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="top_pillar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\top-pillar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ActorSuper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ActorSuper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Grujo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Grujo.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Up.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PowerUp2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PowerUp2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ActorNormalResized" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ActorNormalResized.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bottom_pillar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bottom-pillar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PowerUp1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PowerUp1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PowerUp3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PowerUp3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PowerUp5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PowerUp5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="leaderboard1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\leaderboard11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Iconshock_Myths_X_Files_Monster" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Iconshock-Myths-X-Files-Monster.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

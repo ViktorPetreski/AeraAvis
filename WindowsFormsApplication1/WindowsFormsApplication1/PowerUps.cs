@@ -74,7 +74,7 @@ namespace WindowsFormsApplication1
 
         private void DrawPowerUp(Object source, ElapsedEventArgs e)
         {
-            currIndeks = rand.Next(0, powerUps.Count);
+            currIndeks = 0;// rand.Next(0, powerUps.Count);
             ChoosePosition();
             position = new Rectangle(Point, Size);
             timerEnabled = true;

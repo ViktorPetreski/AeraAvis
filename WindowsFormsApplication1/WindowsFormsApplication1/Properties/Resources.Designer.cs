@@ -130,6 +130,26 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Iconshock_Myths_X_Files_Monster {
+            get {
+                object obj = ResourceManager.GetObject("Iconshock_Myths_X_Files_Monster", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap leaderboard1 {
+            get {
+                object obj = ResourceManager.GetObject("leaderboard1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap PowerUp1 {
@@ -175,6 +195,16 @@ namespace WindowsFormsApplication1.Properties {
         internal static System.Drawing.Bitmap PowerUp5 {
             get {
                 object obj = ResourceManager.GetObject("PowerUp5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap start_button3 {
+            get {
+                object obj = ResourceManager.GetObject("start_button3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

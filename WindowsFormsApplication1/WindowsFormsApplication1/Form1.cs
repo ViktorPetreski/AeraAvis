@@ -24,7 +24,7 @@ namespace WindowsFormsApplication1
         private bool isStarted = false;
         private bool stop;
         private SoundPlayer fly;
-
+        StartupForm sf;
         public Form1()
         {
             InitializeComponent();
@@ -34,7 +34,9 @@ namespace WindowsFormsApplication1
             scene = new Scene(Width, Height);
             stop = false;
             fly = new SoundPlayer(WindowsFormsApplication1.Properties.Resources.Up);
-            
+            DoubleBuffered = true;
+            sf = new StartupForm();
+            sf.ShowDialog();
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -109,6 +111,8 @@ namespace WindowsFormsApplication1
             if (stop) return;
             if (e.KeyChar == '+' && !pressed)
             {
+                label2.Hide();
+                label3.Hide();
                 fly.Play();
                 if (!isStarted)
                 { 

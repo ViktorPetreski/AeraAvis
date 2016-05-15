@@ -169,6 +169,8 @@ namespace WindowsFormsApplication1
             }
             for (int i = 0; i < 5; i++)
             {
+
+              
                 if(t == 3)
                 {
                     h = r.Next(40, 70);
