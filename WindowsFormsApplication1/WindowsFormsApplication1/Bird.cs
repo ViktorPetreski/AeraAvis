@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Timers;
 
 namespace WindowsFormsApplication1
@@ -64,6 +59,16 @@ namespace WindowsFormsApplication1
             return size;
         }
 
+        /// <summary>
+        /// method to rotate an image either clockwise or counter-clockwise
+        /// </summary>
+        /// <param name="img">the image to be rotated</param>
+        /// <param name="rotationAngle">the angle (in degrees).
+        /// NOTE: 
+        /// Positive values will rotate clockwise
+        /// negative values will rotate counter-clockwise
+        /// </param>
+        /// <returns></returns>
         public Image RotateImage(Image img, float rotationAngle)
         {
             //create an empty Bitmap image
@@ -104,7 +109,7 @@ namespace WindowsFormsApplication1
 
         private void MoveUp()
         {
-            birdY -= 8;
+            birdY -= 11;
 
             birdImage = currentImage;
             Rotate(-30);
@@ -119,7 +124,8 @@ namespace WindowsFormsApplication1
             angle += 10;
             Rotate(10);
         }
-        
+
+       
         public void Move(bool direction)
         {
             if (direction) MoveUp();

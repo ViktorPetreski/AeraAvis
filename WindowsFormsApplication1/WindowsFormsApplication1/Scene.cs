@@ -4,8 +4,6 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Media;
-using System.Reflection;
-using System.Text;
 
 namespace WindowsFormsApplication1
 {
@@ -19,7 +17,7 @@ namespace WindowsFormsApplication1
         public readonly int MAX_HEIGHT = 607;
         public readonly int MAX_WIDTH = 470;
         public List<Pipe> pipes;
-        Random r;
+        private Random r;
         public bool stopTimer;
         private SoundPlayer grujo;
         private int score;
@@ -38,6 +36,10 @@ namespace WindowsFormsApplication1
             Init();
         }
 
+        /// <summary>
+        /// initialize the powwerUps list
+        /// </summary>
+        /// <returns></returns>
         private void Init()
         {
             poweredUpBird.Add(Properties.Resources.PowerUp1);
@@ -55,6 +57,14 @@ namespace WindowsFormsApplication1
             bird.Fly(g);
         }
 
+        /// <summary>
+        /// method to move the bird up and down
+        /// </summary>
+        /// <param name="dir">flying direction</param>
+        /// NOTE:
+        /// true is up
+        /// false is down
+        /// <returns></returns>
         public void MoveBird(bool dir)
         {
             if (Reverse() && bird.intersect)
@@ -86,7 +96,10 @@ namespace WindowsFormsApplication1
             return poweredUpBird[index];
         }
 
-
+        /// <summary>
+        /// method to check if the bird hit the pipes or reached the borders
+        /// </summary>
+        /// <returns></returns>
         public void Intersect()
         {
             if (bird.GetPosition().IntersectsWith(powerUp.getPosition()))
@@ -102,7 +115,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        public void ReadAndWriteScore()
+        private void ReadAndWriteScore()
         {
             if (!dead)
             {
@@ -113,7 +126,11 @@ namespace WindowsFormsApplication1
                 File.WriteAllLines("Scores.txt", scores);
             }
         }
-        
+
+        /// <summary>
+        /// method to check if the bird should die
+        /// </summary>
+        /// <returns></returns>
         public bool ShouldDie()
         {
             bool flag = false;
@@ -121,9 +138,9 @@ namespace WindowsFormsApplication1
             {
                 Point point = new Point(bird.GetPoint().X + 5, bird.GetPoint().Y + 9);
                 Size size = new Size(bird.GetSize().Width - 10, bird.GetSize().Height - 17);
-                
+
                 Rectangle c = new Rectangle(point, size);
-         
+
                 if (c.IntersectsWith(p.r) || bird.GetPoint().Y + bird.GetSize().Height <= 0 || bird.GetPoint().Y + bird.GetSize().Height >= MAX_HEIGHT)
                 {
                     ReadAndWriteScore();
@@ -133,7 +150,6 @@ namespace WindowsFormsApplication1
                 }
 
             }
-            //ReadAndWriteScore();
 
             if (bird.GetPoint().Y + bird.GetSize().Height >= MAX_HEIGHT)
             {
@@ -142,16 +158,20 @@ namespace WindowsFormsApplication1
             return flag;
         }
 
-        public bool Reverse()
+        private bool Reverse()
         {
             return powerUp.CheckReversed();
         }
 
-        public bool Grujo()
+        private bool Grujo()
         {
             return bird.intersect && powerUp.getIndex() == 0;
         }
 
+        /// <summary>
+        /// check if superman power up was picked up
+        /// </summary>
+        /// <returns></returns>
         public bool SuperMan()
         {
             return bird.intersect && powerUp.getIndex() == 1;
@@ -166,15 +186,7 @@ namespace WindowsFormsApplication1
         {
             foreach (Pipe p in pipes)
             {
-                //score = Int32.Parse(count);
                 p.Move();
-                int x1 = p.Position.X + 25;
-                int x2 = bird.GetPoint().X;
-                if (x1 == x2)
-                {
-                    score++;
-                }
-
             }
             if (pipes.Last().Position.X < 400)
             {
@@ -183,6 +195,15 @@ namespace WindowsFormsApplication1
 
         }
 
+        /// <summary>
+        /// method to generate pipes
+        /// <param name="t">type of pipe that is created</param>
+        /// NOTE:
+        /// 1 on start
+        /// 2 for regeneration
+        /// 3 for Grujo pipe generation
+        /// </summary>
+        /// <returns></returns>
         public void PipesGeneration(int t = 0)
         {
            int vel = 190;
@@ -244,6 +265,11 @@ namespace WindowsFormsApplication1
             }
         }
 
+        /// <summary>
+        /// method to check if bird passed the pipe
+        /// </summary>
+        /// <param name="count">current number of passed pipes</param>
+        /// <returns></returns>
         public string PipePassed(string count)
         {
             score = Int32.Parse(count);
