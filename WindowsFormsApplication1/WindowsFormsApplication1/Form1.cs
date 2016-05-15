@@ -2,7 +2,7 @@
 using System.Media;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1
+namespace AeraAvis
 {
     public partial class Form1 : Form
     {
@@ -27,7 +27,7 @@ namespace WindowsFormsApplication1
             direction = true;
             scene = new Scene(Width, Height);
             stop = false;
-            fly = new SoundPlayer(WindowsFormsApplication1.Properties.Resources.Up);
+            fly = new SoundPlayer(Properties.Resources.Up);
             DoubleBuffered = true;
             sf = new StartupForm();
             eof = new EndOfGame();

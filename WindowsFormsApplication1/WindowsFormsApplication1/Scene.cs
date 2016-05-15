@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Media;
 
-namespace WindowsFormsApplication1
+namespace AeraAvis
 {
     class Scene
     {
@@ -45,7 +45,7 @@ namespace WindowsFormsApplication1
             poweredUpBird.Add(Properties.Resources.PowerUp1);
             poweredUpBird.Add(Properties.Resources.ActorSuper);
             poweredUpBird.Add(Properties.Resources.PowerUp3);
-            Image tmp = WindowsFormsApplication1.Properties.Resources.ActorNormalRes;
+            Image tmp = AeraAvis.Properties.Resources.ActorNormalRes;
             poweredUpBird.Add(tmp);
             poweredUpBird.Add(tmp);
             r = new Random();

@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace AeraAvis
 {
     partial class StartupForm
     {
@@ -67,7 +67,7 @@
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.Image = global::WindowsFormsApplication1.Properties.Resources.start_button3;
+            this.button1.Image = global::AeraAvis.Properties.Resources.start_button3;
             this.button1.Location = new System.Drawing.Point(62, 293);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
@@ -93,7 +93,7 @@
             this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.background;
+            this.BackgroundImage = global::AeraAvis.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(455, 610);
             this.ControlBox = false;
             this.Controls.Add(this.label2);

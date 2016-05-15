@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace AeraAvis
 {
     partial class EndOfGame
     {
@@ -38,7 +38,7 @@
             // 
             // button1
             // 
-            this.button1.Image = global::WindowsFormsApplication1.Properties.Resources.start_button3;
+            this.button1.Image = global::AeraAvis.Properties.Resources.start_button3;
             this.button1.Location = new System.Drawing.Point(165, 344);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(135, 61);
@@ -99,7 +99,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.background;
+            this.BackgroundImage = global::AeraAvis.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(457, 610);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);

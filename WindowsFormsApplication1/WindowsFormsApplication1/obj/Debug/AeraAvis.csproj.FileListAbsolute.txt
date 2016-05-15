@@ -1,0 +1,11 @@
+C:\Users\Viktor\Documents\test1\AeraAvis\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\AeraAvis.exe.config
+C:\Users\Viktor\Documents\test1\AeraAvis\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\AeraAvis.exe
+C:\Users\Viktor\Documents\test1\AeraAvis\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\AeraAvis.pdb
+C:\Users\Viktor\Documents\test1\AeraAvis\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\AeraAvis.csprojResolveAssemblyReference.cache
+C:\Users\Viktor\Documents\test1\AeraAvis\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\AeraAvis.EndOfGame.resources
+C:\Users\Viktor\Documents\test1\AeraAvis\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\AeraAvis.Form1.resources
+C:\Users\Viktor\Documents\test1\AeraAvis\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\AeraAvis.Properties.Resources.resources
+C:\Users\Viktor\Documents\test1\AeraAvis\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\AeraAvis.StartupForm.resources
+C:\Users\Viktor\Documents\test1\AeraAvis\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\AeraAvis.csproj.GenerateResource.Cache
+C:\Users\Viktor\Documents\test1\AeraAvis\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\AeraAvis.exe
+C:\Users\Viktor\Documents\test1\AeraAvis\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\AeraAvis.pdb
