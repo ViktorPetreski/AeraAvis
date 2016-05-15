@@ -32,6 +32,10 @@
 За сите методи има xml summary за нивно објаснување
 
 ##### Опис на класата Bird.cs
+Оваа класа го опфаќа основниот модел - птицата. Се симулира движење на птицата со помош на методот Move() во кој се повикува еден од методите MoveUp() или MoveDown() во зависност од правецот во кој сакаме прицата да лета.
+Методот RotateImage() врши ротација на слика која ке се прати како аргумент.
+Тајмерот се користи за промена на PoweredUp состојбата, која настапува кога ќе се земе некој од PowerUp-ите регулирана во PowerUp() методод, во нормалната состојба. Оваа состојба трае 7.5 секунди.
+Опис на методите:
 
 ```
 class Bird
@@ -71,7 +75,6 @@ class Bird
             currentImage = Properties.Resources.ActorNormalRes;
             birdImage = currentImage;
             timer.Stop();
-           // throw new NotImplementedException();
         }
 
         public void SetSize(Size newSIze)
@@ -180,11 +183,7 @@ class Bird
             currentImage = img;
             birdImage = currentImage;
             intersect = true;
-           // await Task.Delay(TimeSpan.FromSeconds(7));
-        }
-        
-                
-         
+        }         
     }
  ```
 #### Изработиле: Виктор Петрески 141082 , Никола Јолевски 141105
