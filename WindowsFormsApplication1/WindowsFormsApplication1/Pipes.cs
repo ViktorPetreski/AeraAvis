@@ -41,13 +41,13 @@ namespace WindowsFormsApplication1
 
         public void Draw(Graphics g)
         {
-             //  Brush br = new SolidBrush(Color.Red);
+         
             r = new Rectangle(Position.X, Position.Y, WIDTH, Height);
-            //    Bitmap bmp = new Bitmap(PipeImage);
+          
 
-        //    g.FillRectangle(br, r);
+   
             g.DrawImage(PipeImage, r);
-            //     br.Dispose();
+           
         }
 
         public void Move()

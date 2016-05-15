@@ -42,11 +42,12 @@ namespace WindowsFormsApplication1
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            if (scene.ShouldDie())
-            {
-                Dead();
-                stop = true;
-            }         
+                  if (scene.ShouldDie())
+                {
+                     Dead();
+                    stop = true;
+               }      
+            
             scene.DrawPipe(e.Graphics);
             scene.DrawPowerUp(e.Graphics);
             scene.DrawBird(e.Graphics);
@@ -107,7 +108,7 @@ namespace WindowsFormsApplication1
             {
                 label2.Hide();
                 label3.Hide();
-                fly.Play();
+             fly.Play();
                 if (!isStarted)
                 { 
                     timer4.Start();
@@ -131,5 +132,6 @@ namespace WindowsFormsApplication1
 
         }
 
+       
     }
 }

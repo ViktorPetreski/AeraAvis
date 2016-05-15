@@ -12,9 +12,11 @@ namespace WindowsFormsApplication1
 {
     public partial class StartupForm : Form
     {
+    
         public StartupForm()
         {
             InitializeComponent();
+         
         }
 
         private void StartupForm_Load(object sender, EventArgs e)
@@ -25,11 +27,18 @@ namespace WindowsFormsApplication1
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+  
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+            Application.Exit();
         }
     }
 }
