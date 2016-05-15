@@ -119,11 +119,11 @@ namespace WindowsFormsApplication1
             bool flag = false;
             foreach (Pipe p in pipes)
             {
-                Point point = new Point(bird.GetPoint().X + 3, bird.GetPoint().Y + 7);
-                Size size = new Size(bird.GetSize().Width - 7, bird.GetSize().Height - 14);
-                //Brush br = new SolidBrush(Color.Green);
+                Point point = new Point(bird.GetPoint().X + 5, bird.GetPoint().Y + 9);
+                Size size = new Size(bird.GetSize().Width - 10, bird.GetSize().Height - 17);
+                
                 Rectangle c = new Rectangle(point, size);
-                //g.FillRectangle(br, c);
+         
                 if (c.IntersectsWith(p.r) || bird.GetPoint().Y <= 0 || bird.GetPoint().Y + bird.GetSize().Height >= MAX_HEIGHT)
                 {
                     ReadAndWriteScore();
@@ -196,6 +196,7 @@ namespace WindowsFormsApplication1
                 if(t == 3)
                 {
                     h = r.Next(40, 70);
+                    vel = 450;
                 }
 
                 else
@@ -244,6 +245,17 @@ namespace WindowsFormsApplication1
 
         public string PipePassed()
         {
+            //score = Int32.Parse(count);
+            foreach (Pipe p in pipes)
+            {
+                int x1 = p.Position.X + 25;
+                int x2 = bird.GetPoint().X;
+                if (x1 == x2)
+                {
+                    score += 1;
+                    break;
+                }
+            }
             return score.ToString();
         }
     }

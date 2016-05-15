@@ -98,7 +98,7 @@ namespace WindowsFormsApplication1
             isDead();
             scene.MovePowerUp();
             scene.Intersect();
-            Invalidate();            
+            Invalidate();
         }
 
         private void timer4_Tick(object sender, EventArgs e)
@@ -107,7 +107,7 @@ namespace WindowsFormsApplication1
             scene.MovePipe();
             scene.Check();
             label1.Text = scene.PipePassed();
-            Invalidate();            
+            Invalidate();
         }
 
 
@@ -120,22 +120,21 @@ namespace WindowsFormsApplication1
                 label3.Hide();
                 fly.Play();
                 if (!isStarted)
-                { 
+                {
                     timer4.Start();
                     isStarted = true;
-                }                       
+                }
                 timer1.Enabled = false;
                 timer2.Enabled = true;
                 time1 = 65;
                 pressed = !scene.SuperMan();
             }
-            
+
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             pressed = false;
         }
-
     }
 }

@@ -13,30 +13,35 @@ namespace WindowsFormsApplication1
 {
     public partial class StartupForm : Form
     {
+    
         public StartupForm()
         {
             InitializeComponent();
-        }
-
-        private void StartupForm_Load(object sender, EventArgs e)
-        {
-
+         
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+  
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             string[] scores = File.ReadAllLines("Scores.txt");
             StringBuilder sb = new StringBuilder();
+            sb.Append("Top three scores:\n");
             foreach(string s in scores)
             {
                 sb.Append(s + "\n");
             }
             MessageBox.Show(sb.ToString());
+        }
+
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

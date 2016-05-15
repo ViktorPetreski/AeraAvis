@@ -27,12 +27,18 @@ namespace WindowsFormsApplication1
         public void UpdateCurrentScore(string score)
         {
             label4.Text = score;
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-           // f.ShowDialog();
+            Application.Restart();
             Close();
+        }
+
+        private void EndOfGame_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
