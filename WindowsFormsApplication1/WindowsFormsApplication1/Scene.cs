@@ -102,14 +102,14 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void ReadAndWriteScore()
+        public void ReadAndWriteScore()
         {
             if (!dead)
             {
                 scores = File.ReadAllLines("Scores.txt").ToList();
                 scores.Add(score.ToString());
-                scores = scores.OrderByDescending(x => x).ToList();
-                scores.RemoveAt(3);
+                scores.Sort();
+                scores.RemoveAt(0);
                 File.WriteAllLines("Scores.txt", scores);
             }
         }
@@ -124,7 +124,7 @@ namespace WindowsFormsApplication1
                 
                 Rectangle c = new Rectangle(point, size);
          
-                if (c.IntersectsWith(p.r) || bird.GetPoint().Y <= 0 || bird.GetPoint().Y + bird.GetSize().Height >= MAX_HEIGHT)
+                if (c.IntersectsWith(p.r) || bird.GetPoint().Y + bird.GetSize().Height <= 0 || bird.GetPoint().Y + bird.GetSize().Height >= MAX_HEIGHT)
                 {
                     ReadAndWriteScore();
                     dead = true;
@@ -133,6 +133,7 @@ namespace WindowsFormsApplication1
                 }
 
             }
+            //ReadAndWriteScore();
 
             if (bird.GetPoint().Y + bird.GetSize().Height >= MAX_HEIGHT)
             {
@@ -243,16 +244,16 @@ namespace WindowsFormsApplication1
             }
         }
 
-        public string PipePassed()
+        public string PipePassed(string count)
         {
-            //score = Int32.Parse(count);
+            score = Int32.Parse(count);
             foreach (Pipe p in pipes)
             {
                 int x1 = p.Position.X + 25;
                 int x2 = bird.GetPoint().X;
                 if (x1 == x2)
                 {
-                    score += 1;
+                    score++;
                     break;
                 }
             }

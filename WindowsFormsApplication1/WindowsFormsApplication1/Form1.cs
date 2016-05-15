@@ -44,6 +44,7 @@ namespace WindowsFormsApplication1
         {
             if (scene.ShouldDie())
             {
+                //scene.ReadAndWriteScore();
                 Dead();
                 stop = true;
             }
@@ -86,10 +87,9 @@ namespace WindowsFormsApplication1
             {
                 timer1.Enabled = false;
                 scene.stopTimer = false;
-                //Close();
                 eof.ShowDialog();
-                eof.UpdateCurrentScore(label1.Text);
             }
+            eof.UpdateCurrentScore(label1.Text);
 
         }
 
@@ -106,7 +106,7 @@ namespace WindowsFormsApplication1
             isDead();
             scene.MovePipe();
             scene.Check();
-            label1.Text = scene.PipePassed();
+            label1.Text = scene.PipePassed(label1.Text);
             Invalidate();
         }
 
