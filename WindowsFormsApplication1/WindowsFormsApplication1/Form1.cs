@@ -6,8 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Media;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
@@ -25,6 +23,7 @@ namespace WindowsFormsApplication1
         private bool stop;
         private SoundPlayer fly;
         StartupForm sf;
+        private EndOfGame eof;
 
         public Form1()
         {
@@ -37,16 +36,21 @@ namespace WindowsFormsApplication1
             fly = new SoundPlayer(WindowsFormsApplication1.Properties.Resources.Up);
             DoubleBuffered = true;
             sf = new StartupForm();
+            eof = new EndOfGame();
             sf.ShowDialog();
         }
 
-        private void Form1_Paint(object sender, PaintEventArgs e)
+        private void isDead()
         {
             if (scene.ShouldDie())
             {
                 Dead();
                 stop = true;
-            }         
+            }
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
             scene.DrawPipe(e.Graphics);
             scene.DrawPowerUp(e.Graphics);
             scene.DrawBird(e.Graphics);
@@ -54,6 +58,7 @@ namespace WindowsFormsApplication1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            isDead();
             timer1.Interval = time1;
             direction = false;
             if (time1 >= 30)
@@ -65,6 +70,7 @@ namespace WindowsFormsApplication1
 
         private void timer2_Tick(object sender, EventArgs e)
         {
+            isDead();
             direction = true;
             scene.MoveBird(direction);
             Invalidate();
@@ -75,17 +81,21 @@ namespace WindowsFormsApplication1
 
         private void Dead()
         {
-            timer1.Enabled = timer2.Enabled = timer3.Enabled = timer4.Enabled = false;
-            /*if (scene.stopTimer)
+            timer2.Enabled = timer3.Enabled = timer4.Enabled = false;
+            if (scene.stopTimer)
             {
                 timer1.Enabled = false;
                 scene.stopTimer = false;
-            }*/
-                MessageBox.Show("Umre");
+                //Close();
+                eof.ShowDialog();
+                eof.UpdateCurrentScore(label1.Text);
+            }
+
         }
 
         private void timer3_Tick(object sender, EventArgs e)
         {
+            isDead();
             scene.MovePowerUp();
             scene.Intersect();
             Invalidate();            
@@ -93,9 +103,10 @@ namespace WindowsFormsApplication1
 
         private void timer4_Tick(object sender, EventArgs e)
         {
+            isDead();
             scene.MovePipe();
             scene.Check();
-            label1.Text = scene.PipePassed(label1.Text);
+            label1.Text = scene.PipePassed();
             Invalidate();            
         }
 
@@ -124,11 +135,6 @@ namespace WindowsFormsApplication1
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             pressed = false;
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
     }

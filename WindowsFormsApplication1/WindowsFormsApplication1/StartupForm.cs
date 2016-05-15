@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +30,13 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            string[] scores = File.ReadAllLines("Scores.txt");
+            StringBuilder sb = new StringBuilder();
+            foreach(string s in scores)
+            {
+                sb.Append(s + "\n");
+            }
+            MessageBox.Show(sb.ToString());
         }
     }
 }
